@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Google Maps Cordova Plugin</title>
+        <script type="text/javascript" src="cordova-1.7.0.js"></script>
+        <script type="text/javascript" src="GMPlugin.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('deviceready', onDeviceReady, false);
+            function onDeviceReady() {
+                alert('deviceready');
+            }
+            function launchGoogleMapsActivity() {
+                console.log('test');
+                var success = function(geoname) {
+                    console.log(JSON.stringify(geoname));
+                };
+                var fail = function(error) {
+                    console.log(error);
+                };
+                GMPlugin.startGM();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Google Maps Cordova Plugin</h1>
+        <button onclick="launchGoogleMapsActivity();">Launch Google Maps Activity</button>
+    </body>
+</html>
